@@ -1,0 +1,536 @@
+<robot name="pi_robot">
+
+<!-- REAR RIGHT -->
+
+  <joint name="rear_right_arm_servo_arm_servo_arm_join" type="revolute">
+    	<parent link="rear_right_arm_servo_arm_servo"/>
+    	<child link="rear_right_arm_servo_arm_servo_arm"/>
+    	<origin xyz="0.2 -0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+  
+   <link name="rear_right_arm_servo_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0.05 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<origin xyz="0.1 0.05 0" rpy="1.57 0 0"/>
+		</collision>	
+	</link>
+  
+    <joint name="rear_right_arm_servo_arm_servo_join" type="fixed">
+    	<parent link="rear_right_arm_servo_arm"/>
+    	<child link="rear_right_arm_servo_arm_servo"/>
+	</joint>
+  
+   	<link name="rear_right_arm_servo_arm_servo">
+		<visual>
+		    <origin xyz="0.2 -0.02 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+  
+  <joint name="rear_right_arm_servo_arm_join" type="revolute">
+    	<parent link="rear_right_arm_servo"/>
+    	<child link="rear_right_arm_servo_arm"/>
+    	<origin xyz="0.2 -0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="-1.57" upper="1.57" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="rear_right_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+    <joint name="rear_right_arm_servo_join" type="fixed">
+    	<parent link="rear_right_arm"/>
+    	<child link="rear_right_arm_servo"/>
+	</joint>
+  
+   	<link name="rear_right_arm_servo">
+		<visual>
+		    <origin xyz="0.2 -0.1 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+   	<joint name="rear_right_arm_join" type="revolute">
+    	<parent link="rear_right_servo"/>
+    	<child link="rear_right_arm"/>
+    	<origin xyz="-0.5 -0.25 0.04" rpy="0 0 3.14"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+  
+   	<link name="rear_right_arm">
+		<visual>
+		    <origin xyz="0.1 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+   	<joint name="rear_right_servo_join" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="rear_right_servo"/>
+	</joint>
+
+ 	<link name="rear_right_servo">
+		<visual>
+		    <origin xyz="-0.5 -0.25 0.04" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+
+<!-- REAR LEFT -->
+
+  <joint name="rear_left_arm_servo_arm_servo_arm_join" type="revolute">
+    	<parent link="rear_left_arm_servo_arm_servo"/>
+    	<child link="rear_left_arm_servo_arm_servo_arm"/>
+    	<origin xyz="0.2 0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+  
+   <link name="rear_left_arm_servo_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 -0.05 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<origin xyz="0.1 -0.05 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>	
+	</link>
+  
+    <joint name="rear_left_arm_servo_arm_servo_join" type="fixed">
+    	<parent link="rear_left_arm_servo_arm"/>
+    	<child link="rear_left_arm_servo_arm_servo"/>
+	</joint>
+  
+   	<link name="rear_left_arm_servo_arm_servo">
+		<visual>
+		    <origin xyz="0.2 0.02 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+  
+  <joint name="rear_left_arm_servo_arm_join" type="revolute">
+    	<parent link="rear_left_arm_servo"/>
+    	<child link="rear_left_arm_servo_arm"/>
+    	<origin xyz="0.2 0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="-1.57" upper="1.57" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="rear_left_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+    <joint name="rear_left_arm_servo_join" type="fixed">
+    	<parent link="rear_left_arm"/>
+    	<child link="rear_left_arm_servo"/>
+	</joint>
+  
+   	<link name="rear_left_arm_servo">
+		<visual>
+		    <origin xyz="0.2 0.1 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+   	<joint name="rear_left_arm_join" type="revolute">
+    	<parent link="rear_left_servo"/>
+    	<child link="rear_left_arm"/>
+    	<origin xyz="-0.5 0.25 0.04" rpy="0 0 3.14"/>
+       	<limit lower="-3.14159" upper="0" effort="0" velocity="0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+  
+   	<link name="rear_left_arm">
+		<visual>
+		    <origin xyz="0.1 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+   	<joint name="rear_left_servo_join" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="rear_left_servo"/>
+	</joint>
+
+ 	<link name="rear_left_servo">
+		<visual>
+		    <origin xyz="-0.5 0.25 0.04" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+<!--FRONT-RIGHT-->
+  <joint name="front_right_arm_servo_arm_servo_arm_join" type="revolute">
+    	<parent link="front_right_arm_servo_arm_servo"/>
+    	<child link="front_right_arm_servo_arm_servo_arm"/>
+    	<origin xyz="0.2 0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+  
+   <link name="front_right_arm_servo_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 -0.05 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<origin xyz="0.1 -0.05 0" rpy="1.57 0 0"/>
+		</collision>	
+	</link>
+  
+    <joint name="front_right_arm_servo_arm_servo_join" type="fixed">
+    	<parent link="front_right_arm_servo_arm"/>
+    	<child link="front_right_arm_servo_arm_servo"/>
+	</joint>
+  
+   	<link name="front_right_arm_servo_arm_servo">
+		<visual>
+		    <origin xyz="0.2 0.02 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+  
+  <joint name="front_right_arm_servo_arm_join" type="revolute">
+    	<parent link="front_right_arm_servo"/>
+    	<child link="front_right_arm_servo_arm"/>
+    	<origin xyz="0.2 0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="-1.57" upper="1.57" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="front_right_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+    <joint name="front_right_arm_servo_join" type="fixed">
+    	<parent link="front_right_arm"/>
+    	<child link="front_right_arm_servo"/>
+	</joint>
+  
+   	<link name="front_right_arm_servo">
+		<visual>
+		    <origin xyz="0.2 0.1 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+   	<joint name="front_right_arm_join" type="revolute">
+    	<parent link="front_right_servo"/>
+    	<child link="front_right_arm"/>
+    	<origin xyz="0.5 -0.25 0.04" rpy="0 0 0"/>
+       	<limit lower="-3.14159" upper="0" effort="0" velocity="0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+  
+   	<link name="front_right_arm">
+		<visual>
+		    <origin xyz="0.1 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+   	<joint name="front_right_servo_join" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="front_right_servo"/>
+	</joint>
+
+ 	<link name="front_right_servo">
+		<visual>
+		    <origin xyz="0.5 -0.25 0.04" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+
+<!--FRONT-LEFT-->
+
+  <joint name="front_left_arm_servo_arm_servo_arm_join" type="revolute">
+    	<parent link="front_left_arm_servo_arm_servo"/>
+    	<child link="front_left_arm_servo_arm_servo_arm"/>
+    	<origin xyz="0.2 -0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+  
+   <link name="front_left_arm_servo_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0.05 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<origin xyz="0.1 0.05 0" rpy="1.57 0 0"/>
+		</collision>	
+	</link>
+  
+    <joint name="front_left_arm_servo_arm_servo_join" type="fixed">
+    	<parent link="front_left_arm_servo_arm"/>
+    	<child link="front_left_arm_servo_arm_servo"/>
+	</joint>
+  
+   	<link name="front_left_arm_servo_arm_servo">
+		<visual>
+		    <origin xyz="0.2 -0.02 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+  
+  <joint name="front_left_arm_servo_arm_join" type="revolute">
+    	<parent link="front_left_arm_servo"/>
+    	<child link="front_left_arm_servo_arm"/>
+    	<origin xyz="0.2 -0.1 0.02" rpy="0 0 0"/>
+       	<limit lower="-1.57" upper="1.57" effort="0" velocity="0"/>
+        <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="front_left_arm_servo_arm">
+		<visual>
+		    <origin xyz="0.1 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+    <joint name="front_left_arm_servo_join" type="fixed">
+    	<parent link="front_left_arm"/>
+    	<child link="front_left_arm_servo"/>
+	</joint>
+  
+   	<link name="front_left_arm_servo">
+		<visual>
+		    <origin xyz="0.2 -0.1 0.02" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+   	<joint name="front_left_arm_join" type="revolute">
+    	<parent link="front_left_servo"/>
+    	<child link="front_left_arm"/>
+    	<origin xyz="0.5 0.25 0.04" rpy="0 0 0"/>
+       	<limit lower="0" upper="3.14159" effort="0" velocity="0"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+  
+   	<link name="front_left_arm">
+		<visual>
+		    <origin xyz="0.1 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="0.4 0.15 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+
+   	<joint name="front_left_servo_join" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="front_left_servo"/>
+	</joint>
+
+ 	<link name="front_left_servo">
+		<visual>
+		    <origin xyz="0.5 0.25 0.04" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.1" radius="0.05"/>
+			</geometry>
+			<material name="Red">
+	       		<color rgba="1 0.0 0.0 1.0"/>
+	     	</material>
+		</visual>
+	</link>
+
+ 	<link name="base_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="1 0.5 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="1 0.5 0.02"/>
+			</geometry>
+		</collision>
+	</link>
+ 
+</robot>
